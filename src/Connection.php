@@ -40,7 +40,8 @@ class Connection
         if (empty($this->headers)) {
             $this->headers = array(
                 "Content-Type: application/json",
-                "access_token: " . $this->api_key
+                "access_token: " . $this->api_key,
+                "User-Agent: NS3"
             );
         }
         if (!empty($custom)) {
@@ -80,7 +81,8 @@ class Connection
 
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             "Content-Type: application/json",
-            "access_token: " . $this->api_key
+            "access_token: " . $this->api_key,
+            "User-Agent: NS3"
         ));
 
         $response = curl_exec($ch);
